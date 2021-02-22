@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>list</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="x in fruit">{{x}}</li> <!--可以增加list裡的內容 透過 app.fruit.push("new fruit")-->
+            </ul>
+        </div> <!--app.fruit-->
+
+        <script src="./js/vue.js"></script> <!--導入vue功能-->
+
+        <script>
+            const app = new Vue({
+                el: "#app", //對應到id是app
+                data: {
+                    fruit: ["apple", "orange", "kiwi"] //定義fruit list變數 
+                }
+            })
+        </script>
+    </body>
+</html>

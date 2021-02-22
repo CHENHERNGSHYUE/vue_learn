@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>計數器</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{message}}</h1>
+            <h2>目前數值為: {{counter}}</h2>
+            <button @click="plus">+</button> <!--@click可以把它看成 {v-on:click=}-->
+            <button v-on:click="minus">-</button>
+        </div>
+
+        <script src="./js/vue.js"></script> <!--導入vue功能-->
+
+        <script>
+            const app = new Vue({
+                el: "#app", //對應到id是app
+                data: {
+                    message: "Hello~this is calculator",
+                    counter: 0
+                },
+                methods: { //寫方法的功能
+                    plus(){
+                        this.counter++ //this是指向到app所以能調用到data.counter
+                    },
+                    minus(){
+                        this.counter--
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
